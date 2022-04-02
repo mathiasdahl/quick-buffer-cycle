@@ -151,3 +151,18 @@ down the list a buffer is that you want to switch to. It's also extra
 useful if you use a numeric prefix argument ~N~ when calling
 ~quick-buffer-cycle~ to switch directly to buffer ~N~.
 
+~quick-buffer-cycle-timeout~ controls how long you have to wait for a
+buffer to be switched to (and how much time you have to press again,
+to cycle to the next buffer in the list). The default value is
+~0.4~. Try with smaller values if you are impatient and a fast
+typer. Try a larger number if you want to chill out more...
+
+** Similar packages
+
+These are packages I first did not find but, of course, found after I
+wrote mine... They provide more or less the same basic feature, but
+with slightly different looks and behavior.
+
+https://github.com/ibukanov/pc-bufsw
+https://github.com/joostkremers/nswbuff
+
