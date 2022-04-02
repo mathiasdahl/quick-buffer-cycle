@@ -1,6 +1,11 @@
 #+TITLE: Quick Buffer Cycle
 
-Yet another one-key buffer switcher for Emacs (the best one, according to myself 😃)
+Yet another one-key buffer switcher for Emacs (the best one, according
+to myself 😃)
+
+** tl;dr;
+
+This might be the only buffer switcher/cycler you will ever need.
 
 ** Background
 
@@ -54,9 +59,24 @@ delay, this simple hack will probably work well for you.
 
 ** Usage:
 
-Bind `quick-buffer-cycle' to a convenient key. I prefer the ~F1~ key:
+Load ~quick-buffer-cycle.el~ and bind ~quick-buffer-cycle~ to some
+convenient key. For example by using ~use-package~:
 
 #+BEGIN_SRC emacs-lisp
+(use-package quick-buffer-cycle
+  :bind  (("<f1>"       . quick-buffer-cycle)
+          ("<XF86Back>" . quick-buffer-cycle)) ;; When using my Chromebook
+  :load-path "~/prj/quick-buffer-cycle"
+  :config
+  (setq quick-buffer-cycle-hint-limit 10)
+  (setq quick-buffer-cycle-number-items 'prefix)
+  (setq quick-buffer-cycle-show-number-threshold 1))
+#+END_SRC
+
+The classic way:
+
+#+BEGIN_SRC emacs-lisp
+  (load-file "quick-buffer-cycle.el")
   (global-set-key [f1] 'quick-buffer-cycle)
 #+END_SRC
 
@@ -72,11 +92,21 @@ want is the one previous to the previous one). Here, "quickly"
 means to press the key with a maximum delay of
 `quick-buffer-cycle-timeout' (default 0.4 seconds).
 
-To make it easier to select the correct buffer, when you pressed
-the key the wrong number of times, there is a hint in the echo area
-that shows how many key presses are needed to get to a certain
-buffer after a buffer have been switched to. By default, the number
-of buffers to show in the hint is 4 but this can be customized by
-setting `quick-buffer-cycle-hint-limit' to the number of buffers to
-be shown.
+When you have used ~quick-buffer-cycle~ the first time, to make it
+easier to select the correct buffer, the last N buffer name are shown
+in the header line. A number is shown in front of each buffer name
+(controlled by ~quick-buffer-cycle-number-items~). The number says
+how many times you need to call ~quick-buffer-cycle~ to reach that
+buffer. When ~quick-buffer-cycle~ is called, the selected buffer name
+is highlighted (so you know which buffer will be switched to when you
+stop calling ~quick-buffer-cycle~.)
+
+You can turn off displaying the buffer names in the header line by
+setting ~quick-buffer-cycle-hint-limit~ to ~nil~.
+
+It's also possible to provide a numeric argument before calling
+~quick-buffer-cycle~, to jump directly to the buffer with that number
+in the list.
+
+** Configuration options
 
