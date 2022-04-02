@@ -1,4 +1,4 @@
-* quick-buffer-cycle
+#+TITLE: Quick Buffer Cycle
 
 Yet another one-key buffer switcher for Emacs (the best one, according to myself 😃)
 
@@ -15,8 +15,8 @@ Certain days I am repeating the same buffer switching pattern over
 and over again. I switch to buffer A, then B, then C, and then A
 again (or whatever). Those days, my convenient F1 binding does not
 work for me and I have to use some sort of classic "buffer
-selector" (sometimes I use the standard one in Emacs, but often I
-use Anything (precursor to Helm)), which of course works but is
+selector". Sometimes I use the standard one in Emacs, but often I
+use Anything (precursor to Helm), which of course works but is
 slower/boring.
 
 This hack is my attempt to solve it. The idea is that, in a given
@@ -36,19 +36,20 @@ if I like it. Preliminary results shows that I will...
 ** About the approach using a timer
 
 At first I tried an approach where I measured the time between each
-call to the "switch" command. Long story short I could not get it
-work the way I wanted to (it now seems others have succeeded and at
-least one of those solution seems to be quite complex, which is
-perhaps why I did not succeed) and got the idea that a timer would
-be the solution - simply wait with switching buffers until the user
-has stopped "cycling".
+call to the "switch" command (and do the cycling to the next buffer if
+a certain time had not elapsed). Long story short I could not get it
+work the way I wanted to and got the idea that a timer would be the
+solution - simply wait with switching buffers until the user has
+stopped "cycling". I later found out that others have succeeded with
+the first approach I tried and at least one of those solution seems to
+be quite complex, which is perhaps why I did not succeed...
 
-The solution is very simple, but it has one major drawback,
-especially for the impatient: you can never switch to a buffer more
-quickly than what the timer delay is set to (0.4 seconds by
-default). You can tweak the timer value to whatever suits you. If
-you have a fast computer and if you are a fast typist, you should
-certainly try with 0.3 or even 0.2. If you can live with this
+The solution is very simple, but it has one major drawback, especially
+for the impatient: you can never switch to a buffer more quickly than
+what the timer delay (~quick-buffer-cycle-timeout~) is set to (0.4
+seconds by default). You can tweak the timer value to whatever suits
+you. If you have a fast computer and if you are a fast typist, you
+should certainly try with 0.3 or even 0.2. If you can live with this
 delay, this simple hack will probably work well for you.
 
 ** Usage:
