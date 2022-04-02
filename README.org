@@ -1,11 +1,9 @@
 #+TITLE: Quick Buffer Cycle
 
-Yet another one-key buffer switcher for Emacs (the best one, according
-to myself 😛)
-
 ** tl;dr;
 
-This might be the only buffer switcher/cycler you will ever need.
+This might be the only one-key buffer switcher/cycler for Emacs that
+you will ever need 😛
 
 Download ~quick-buffer-cycle.el~ to ~SOME_PATH~, and put the following
 in your ~.emacs~ or ~init.el~ file:
