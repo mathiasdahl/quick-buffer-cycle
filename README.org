@@ -1,11 +1,25 @@
 #+TITLE: Quick Buffer Cycle
 
 Yet another one-key buffer switcher for Emacs (the best one, according
-to myself 😃)
+to myself 😛)
 
 ** tl;dr;
 
 This might be the only buffer switcher/cycler you will ever need.
+
+Download ~quick-buffer-cycle.el~ to ~SOME_PATH~, and put the following
+in your .emacs or init.el file:
+
+#+BEGIN_SRC emacs-lisp
+  (load-file "SOME_PATH/quick-buffer-cycle.el")
+  (global-set-key [f1] 'quick-buffer-cycle)
+#+END_SRC
+
+Select both lines and do ~M-x eval-region RET~.
+
+Done.
+
+Now press the ~F1~ key one or many times, and smile 😃
 
 ** Background
 
