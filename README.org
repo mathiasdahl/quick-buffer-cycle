@@ -21,9 +21,14 @@ Done.
 
 Now press the ~F1~ key one or many times quickly, and smile 😃
 
-This is is what you will see after you have used the command once:
+This is is what you will see after you have used the command once
+(notice the header line at the top):
 
 [[https://github.com/mathiasdahl/quick-buffer-cycle/raw/main/qbc01.png]]
+
+This is how it looks when you have quickly pressed ~f1~ twice:
+
+[[https://github.com/mathiasdahl/quick-buffer-cycle/raw/main/qbc02.png]]
 
 ** Background
 
