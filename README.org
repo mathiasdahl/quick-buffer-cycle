@@ -132,3 +132,22 @@ in the list.
 
 ** Configuration options
 
+Things should work nicely for you out-of-the-box. Here are some
+settings you might want to try out though:
+
+~quick-buffer-cycle-hint-limit~ controls how many buffer names to show
+in the header line. Set to ~nil~ to turn off the display of buffer
+names (you will have no visual indication of which buffer you will
+switch to, but the experience will be distraction-free).
+
+~quick-buffer-cycle-number-items~ controls whether a number should be
+prefixed or suffixed to the buffer name, or if there should be no
+number at all. Set to ~prefix~ by default.
+
+~quick-buffer-cycle-show-number-threshold~ controls what buffer
+entries in the list to number. Perhaps you don't need it for the first
+three buffers? Then set it to 4. The number adds more value the longer
+down the list a buffer is that you want to switch to. It's also extra
+useful if you use a numeric prefix argument ~N~ when calling
+~quick-buffer-cycle~ to switch directly to buffer ~N~.
+
