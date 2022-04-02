@@ -1,15 +1,15 @@
-# quick-buffer-cycle
+* quick-buffer-cycle
 
-Yet another one-key buffer switcher for Emacs
+Yet another one-key buffer switcher for Emacs (the best one, according to myself 😃)
 
-## Background
+** Background
 
 For a long time (*) I have had the F1 key bound to a command that
 takes me to the previous buffer. It has been a very simple command
 and it has served me well. I use this in every editing session more
 or less.
 
-* I think I first got the idea here: https://www.emacswiki.org/emacs/DedicatedKeys
+ (*) I think I first got the idea here: https://www.emacswiki.org/emacs/DedicatedKeys
 
 Certain days I am repeating the same buffer switching pattern over
 and over again. I switch to buffer A, then B, then C, and then A
@@ -33,7 +33,7 @@ wheel afterall...), but I learned this after developing this
 one... At any rate, now it's done and I will try to use it to see
 if I like it. Preliminary results shows that I will...
 
-## About the approach using a timer
+** About the approach using a timer
 
 At first I tried an approach where I measured the time between each
 call to the "switch" command. Long story short I could not get it
@@ -51,11 +51,13 @@ you have a fast computer and if you are a fast typist, you should
 certainly try with 0.3 or even 0.2. If you can live with this
 delay, this simple hack will probably work well for you.
 
-## Usage:
+** Usage:
 
-Bind `quick-buffer-cycle' to a convenient key. I prefer the F1 key:
+Bind `quick-buffer-cycle' to a convenient key. I prefer the ~F1~ key:
 
-(global-set-key [f1] 'quick-buffer-cycle)
+#+BEGIN_SRC emacs-lisp
+  (global-set-key [f1] 'quick-buffer-cycle)
+#+END_SRC
 
 Now, the most common scenario (for me) is that I want to switch to
 the previous buffer. To do that, press the key once, and wait (the
