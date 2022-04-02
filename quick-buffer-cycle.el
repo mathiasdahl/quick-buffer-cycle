@@ -166,12 +166,8 @@ spot seems to be somewhere around 0.5 seconds."
   :type 'float
   :group 'quick-buffer-cycle)
 
-(defcustom quick-buffer-cycle-buffer-with-no-hint nil
-  "Regexp matching buffer names that should have no hint."
-  :type 'string)
-
 (defvar quick-buffer-cycle-count 0
-  "Track repeated invocations of the cycle command.")
+  "Internal variable to track repeated invocations of the cycle command.")
 
 (defun quick-buffer-cycle-buffers ()
   "Return the list of buffers to chose from."
