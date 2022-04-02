@@ -151,7 +151,7 @@ cycling."
                  (const nil))
   :group 'quick-buffer-cycle)
 
-(defcustom quick-buffer-cycle-show-number-threshold 4
+(defcustom quick-buffer-cycle-show-number-threshold 1
   "Threshold for when to add a number to the buffer name.
 To number all buffer names, set the number to 1.  Only has effect
 when `quick-buffer-cycle-number-items' is non-nil."
