@@ -8,7 +8,7 @@ to myself 😛)
 This might be the only buffer switcher/cycler you will ever need.
 
 Download ~quick-buffer-cycle.el~ to ~SOME_PATH~, and put the following
-in your .emacs or init.el file:
+in your ~.emacs~ or ~init.el~ file:
 
 #+BEGIN_SRC emacs-lisp
   (load-file "SOME_PATH/quick-buffer-cycle.el")
@@ -19,7 +19,11 @@ Select both lines and do ~M-x eval-region RET~.
 
 Done.
 
-Now press the ~F1~ key one or many times, and smile 😃
+Now press the ~F1~ key one or many times quickly, and smile 😃
+
+This is is what you will see after you have used the command once:
+
+https://github.com/mathiasdahl/quick-buffer-cycle/raw/main/qbc01.png
 
 ** Background
 
