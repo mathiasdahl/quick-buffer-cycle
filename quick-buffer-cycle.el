@@ -103,6 +103,8 @@
 
 ;;; Code:
 
+(require 'cl-seq)
+
 (defvar quick-buffer-cycle-timer nil
   "Timer used to activate the actual switch.")
 
