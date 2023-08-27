@@ -4,7 +4,7 @@
 
 ;; Author: Mathias Dahl <mathias.dahl@gmail.com>
 ;; Maintainer: Mathias Dahl <mathias.dahl@gmail.com>
-;; Version: 1.1.0
+;; Version: 1.2.0
 ;; Keywords: convenience
 ;; URL: http://www.emacswiki.org/cgi-bin/wiki.pl?QuickBufferCycle
 
@@ -168,6 +168,12 @@ spot seems to be somewhere around 0.5 seconds."
   :type 'float
   :group 'quick-buffer-cycle)
 
+(defcustom quick-buffer-cycle-hide-hint-after-switch nil
+  "When `t', hide hint after a buffer has been switched to."
+  :type '(choice (const nil)
+                 (const t))
+  :group 'quick-buffer-cycle)
+
 (defvar quick-buffer-cycle-count 0
   "Internal variable to track repeated invocations of the cycle command.")
 
@@ -182,6 +188,8 @@ spot seems to be somewhere around 0.5 seconds."
   (switch-to-buffer (nth quick-buffer-cycle-count
                          (quick-buffer-cycle-buffers)))
   (quick-buffer-cycle-show-hint)
+  (if quick-buffer-cycle-hide-hint-after-switch
+      (setq header-line-format nil))  
   (setq quick-buffer-cycle-count 0))
 
 (defun quick-buffer-cycle-start-timer ()
